@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.qaitdevlabs.qualityassessor.model.Product" table="product">
+		<id name="productId" type="java.lang.Long">
+			<column name="product_id" />
+			<generator class="native" />
+		</id>
+		<property name="productName" type="string" unique="true">
+			<column name="product_name" length="40" not-null="true" />
+		</property>
+		<property name="productDescription" type="string" unique="true">
+			<column name="product_description" length="80" not-null="true" />
+		</property>
+		<many-to-one name="user"
+			class="com.qaitdevlabs.qualityassessor.model.User" column="user_id"
+			lazy="false" />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,53 @@
+.linkNavigation{
+	color:white;text-decoration:none;
+/* 	height:45px; */
+	widht:230px;
+	display:block;
+	padding:10px;
+}
+
+.divNavigation{
+	height:35px;
+	widht:230px;
+	margin:2%;
+	
+}
+
+.divNavigation > a:hover{
+	background:#333333
+}
+
+
+.leftNavigation {
+	float: left;
+	width: 17%;
+	background: none repeat scroll 0 0 #595959;
+	height : 700px;
+	margin : 2px -1px 0 2px;
+}
+
+.content {
+	float: left;
+	width: 82%;
+	height: 700px;
+	background: white;
+	margin: 2px;
+/* 	border-radius: 3px; */
+	overflow: auto;
+	border :1px solid #ccc;
+}
+
+.body {
+	height: 700px;
+}
+
+.active{
+display:block;
+}
+.not-active{
+display:none;
+}
+
+.activeLeftNavigation{
+	background:grey
+}

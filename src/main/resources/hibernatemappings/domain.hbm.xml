@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.qaitdevlabs.qualityassessor.model.Domain" table="domain" >
+		<id name="domainId" type="java.lang.Long">
+			<column name="domain_id" />
+			<generator class="native" />
+		</id>
+		<property name="domainName" type="string">
+			<column name="domain_name" length="64" not-null="true" unique="true" />
+		</property>
+		<property name="wikipediaLink" type="string">
+			<column name="wikipedia_link" length="64"  />
+		</property>
+		<property name="isParent" type="boolean">
+			<column name="is_parent"  />
+		</property>
+		<property name="isActive" type="boolean">
+			<column name="is_active"  />
+		</property>
+		<property name="domainType" type="string">
+			<column name="domain_type"  />
+		</property>
+		<property name="creationDate" type="java.util.Date">
+			<column name="creation_date" />
+		</property>
+		<property name="modificationDate" type="java.util.Date">
+			<column name="modification_date" />
+		</property>
+		<many-to-one name="creationUser"
+			class="com.qaitdevlabs.qualityassessor.model.User" column="creation_user" 
+			 />
+		<many-to-one name="modificationUser"
+			class="com.qaitdevlabs.qualityassessor.model.User" column="modification_user" 
+			 />
+
+	</class>
+</hibernate-mapping>

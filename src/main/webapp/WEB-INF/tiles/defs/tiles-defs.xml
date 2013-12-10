@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+<!-- 	<definition name="login" template="/WEB-INF/pages/login.jsp"> -->
+<!-- 	</definition> -->
+
+<!-- 	<definition name="signUp" template="/WEB-INF/pages/signUp.jsp"> -->
+<!-- 	</definition> -->
+
+
+	<definition name="common-layout" template="/WEB-INF/tiles/layout/common-layout.jsp">
+		<put-attribute name="main-header" value="/WEB-INF/pages/common/commonMainHeader.jsp" />
+		<put-attribute name="tabName"  type="string" value="home"/>
+		<put-attribute name="commonHeader" value="/WEB-INF/pages/common/commonHeader.jsp" />
+		<put-attribute name="topNavigation" value="/WEB-INF/pages/common/commonTopNavigation.jsp" />
+		<put-attribute name="leftNavigation" value="/WEB-INF/pages/common/commonLeftNavigation.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/pages/common/footer.jsp" />
+	</definition>
+
+	<definition name="login" extends="common-layout">
+		<put-attribute name="main-header" value="/WEB-INF/pages/common/commonMainLoginHeader.jsp" />
+		<put-attribute name="commonHeader" value="/WEB-INF/pages/common/commonLoginHeader.jsp" />
+		<put-attribute name="header" value="/WEB-INF/pages/login/loginHeader.jsp" />
+		<put-attribute name="topNavigation" value="/WEB-INF/pages/common/commonLoginTopNavigation.jsp" />
+		<put-attribute name="leftNavigation" value="" />
+		<put-attribute name="content" value="/WEB-INF/pages/login/loginContent.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/pages/common/footer.jsp" />
+	</definition>
+
+	<definition name="signUp" extends="login">
+		<put-attribute name="header" value="/WEB-INF/pages/signUp/signUpHeader.jsp" />
+		<put-attribute name="content" value="/WEB-INF/pages/signUp/signUpContent.jsp" />
+	</definition>
+
+	<definition name="home" extends="common-layout">
+		<put-attribute name="header" value="/WEB-INF/pages/home/homeHeader.jsp" />
+		<put-attribute name="tabName" value="home"/>
+<!-- 		<put-attribute name="leftNavigation" value="/WEB-INF/pages/home/homeLeftNavigation.jsp" /> -->
+		<put-attribute name="content" value="/WEB-INF/pages/home/homeContent.jsp" />
+	</definition>
+
+	<definition name="commonDomainsView" extends="common-layout">
+		<put-attribute name="header" value="/WEB-INF/pages/templates/common-editor.jsp" />
+<!-- 		<put-attribute name="leftNavigation" value="/WEB-INF/pages/productMgr/productMgrLeftNavigation.jsp" /> -->
+		<put-attribute name="content" value="/WEB-INF/pages/templates/commonTemplatesView.jsp" />
+	</definition>
+	
+	<definition name="myTemplates" extends="common-layout">
+		<put-attribute name="header" value="/WEB-INF/pages/templates/common-editor.jsp" />
+<!-- 		<put-attribute name="leftNavigation" value="/WEB-INF/pages/productMgr/productMgrLeftNavigation.jsp" /> -->
+		<put-attribute name="content" value="/WEB-INF/pages/myTemplates/myTemplatesView.jsp" />
+	</definition>
+
+	<definition name="myProductsView" extends="common-layout">
+		<put-attribute name="tabName" value="myProducts"/>
+		<put-attribute name="header" value="/WEB-INF/pages/productMgr/myProductsHeader.jsp" />
+<!-- 		<put-attribute name="leftNavigation" value="/WEB-INF/pages/productMgr/productMgrLeftNavigation.jsp" /> -->
+		<put-attribute name="content" value="/WEB-INF/pages/productMgr/myProductsView.jsp" />
+	</definition>
+
+	<definition name="profile" extends="common-layout">
+		<put-attribute name="header" value="/WEB-INF/pages/profile/profileHeader.jsp" />
+<!-- 		<put-attribute name="leftNavigation" value="/WEB-INF/pages/profile/profileLeftNavigation.jsp" /> -->
+		<put-attribute name="content" value="/WEB-INF/pages/profile/profileContent.jsp" />
+	</definition>
+	
+	<definition name="assessmentRequests" extends="common-layout">
+		<put-attribute name="header" value="/WEB-INF/pages/assessmentRequests/assessmentRequestsHeader.jsp" />
+		<put-attribute name="tabName" value="reviewRequests"/>
+<!-- 		<put-attribute name="leftNavigation" value="/WEB-INF/pages/reviews/reviewLeftNavigation.jsp" /> -->
+		<put-attribute name="content" value="/WEB-INF/pages/assessmentRequests/assessmentRequestsContent.jsp" />
+	</definition>
+
+	<definition name="templateSelectionView" extends="common-layout">
+		<put-attribute name="header" value="/WEB-INF/pages/templateSelection/templateSelectionHeader.jsp" />
+		<put-attribute name="content" value="/WEB-INF/pages/templateSelection/templateSelectionContent.jsp" />
+	</definition>
+	
+	<definition name="productReviews" extends="common-layout">
+		<put-attribute name="header" value="/WEB-INF/pages/productReviews/productReviewsHeader.jsp" />
+		<put-attribute name="content" value="/WEB-INF/pages/productReviews/productReviewsContent.jsp" />
+	</definition>
+	
+	<definition name="reviewPage" extends="common-layout">
+		<put-attribute name="header" value="/WEB-INF/pages/reviewPage/reviewPageHeader.jsp" />
+		<put-attribute name="content" value="/WEB-INF/pages/reviewPage/reviewPageContent.jsp" />
+	</definition>
+	
+	<definition name="radarChart" extends="common-layout">
+		<put-attribute name="header" value="/WEB-INF/pages/radarChart/radarChartHeader.jsp" />
+		<put-attribute name="content" value="/WEB-INF/pages/radarChart/radarChartContent.jsp" />
+	</definition>
+	
+	<definition name="assessmentInvitation" extends="common-layout">
+		<put-attribute name="header" value="/WEB-INF/pages/assessmentInvitation/invitationHeader.jsp" />
+		<put-attribute name="content" value="/WEB-INF/pages/assessmentInvitation/invitationView.jsp" />
+	</definition>
+	
+	<definition name="createReview" extends="common-layout">
+		<put-attribute name="header" value="" />
+		<put-attribute name="content" value="/WEB-INF/pages/createReview/createReviewContent.jsp" />
+	</definition>
+
+</tiles-definitions>

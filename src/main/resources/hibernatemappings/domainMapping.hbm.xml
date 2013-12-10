@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.qaitdevlabs.qualityassessor.model.DomainMapping"
+		table="domain_mapping">
+		<id name="domainMappingId" type="java.lang.Long" unsaved-value="null">
+			<column name="domain_mapping_id" />
+			<generator class="native" />
+		</id>
+		<many-to-one name="domain"
+			class="com.qaitdevlabs.qualityassessor.model.Domain" cascade="save-update">
+			<column name="domain_id" not-null="true" />
+		</many-to-one>
+		<many-to-one name="subDomain"
+			class="com.qaitdevlabs.qualityassessor.model.Domain" lazy="false"
+			cascade="save-update">
+			<column name="sub_domain_id" not-null="true" />
+		</many-to-one>
+		<property name="weightage" type="java.lang.Integer">
+			<column name="weightage" length="40" not-null="true" />
+		</property>
+		<property name="creationDate" type="java.util.Date">
+			<column name="creation_date" not-null="true" />
+		</property>
+		<property name="modificationDate" type="java.util.Date">
+			<column name="modification_date" not-null="true" />
+		</property>
+		
+	</class>
+</hibernate-mapping>

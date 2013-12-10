@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+
+	<!-- Hibernate session factory -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				 <prop key="hibernate.hbm2ddl.auto">update</prop>
+			</props>
+		</property>
+
+		<property name="mappingResources">
+			<list>
+				<value>/hibernatemappings/user.hbm.xml</value>
+				<value>/hibernatemappings/group.hbm.xml</value>
+				<value>/hibernatemappings/role.hbm.xml</value>
+				<value>/hibernatemappings/urlRule.hbm.xml</value>
+				<value>/hibernatemappings/componentRule.hbm.xml</value>
+				<value>/hibernatemappings/domain.hbm.xml</value>
+				<value>/hibernatemappings/product.hbm.xml</value>
+				<value>/hibernatemappings/domainMapping.hbm.xml</value>
+                <value>/hibernatemappings/socialNetwork.hbm.xml</value>
+                <value>/hibernatemappings/workExperience.hbm.xml</value>
+                <value>/hibernatemappings/assessment.hbm.xml</value>
+                <value>/hibernatemappings/assessmentInvitation.hbm.xml</value>
+                <value>/hibernatemappings/productTemplate.hbm.xml</value>
+			</list>
+		</property>
+
+	</bean>
+</beans>

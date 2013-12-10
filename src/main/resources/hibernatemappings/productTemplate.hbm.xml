@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.qaitdevlabs.qualityassessor.model.ProductTemplateMap"
+		table="product_template_map">
+		<id name="productTemplateMapId" type="java.lang.Long" unsaved-value="null">
+			<column name="product_template_map_id" />
+			<generator class="native" />
+		</id>
+		<many-to-one name="product"
+			class="com.qaitdevlabs.qualityassessor.model.Product" cascade="save-update" lazy="false"> 
+			<column name="product_id" not-null="true" />
+		</many-to-one>
+		<many-to-one name="domain"
+			class="com.qaitdevlabs.qualityassessor.model.Domain" cascade="save-update" lazy="false">
+			<column name="domain_id" not-null="true" />
+		</many-to-one>
+		
+		
+	
+		
+	</class>
+</hibernate-mapping>

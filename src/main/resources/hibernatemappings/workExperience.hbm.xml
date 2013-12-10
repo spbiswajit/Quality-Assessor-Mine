@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.qaitdevlabs.qualityassessor.model.WorkExperience" table="work_experience" >
+        <id name="workExperienceId" type="java.lang.Long">
+            <column name="work_experience_id" />
+            <generator class="native" />
+        </id>
+        <property name="title" type="string">
+            <column name="title" length="40" not-null="true"/>
+        </property>
+        <property name="areaOfExpertise" type="string">
+            <column name="area_of_expertise" length="64" />
+        </property>
+         <property name="roleDescription" type="string">
+            <column name="roleDescription" length="100" />
+        </property>
+        <property name="fromDate" type="string" >
+            <column name="from_date" />
+        </property>
+        <property name="toDate" type="string" >
+            <column name="to_date" />
+        </property>
+        <many-to-one name="user" class="com.qaitdevlabs.qualityassessor.model.User" lazy="false">
+            <column name="user_id" not-null="true" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

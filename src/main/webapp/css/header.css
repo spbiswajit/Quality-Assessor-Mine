@@ -1,0 +1,33 @@
+#cssmenu{  margin-left: auto;
+    margin-right: auto;
+    width: 100% ;height:2em; display:block;margin:auto; padding:0; border:1px solid;font-size:12px} 
+#cssmenu > ul {list-style:inside none; padding:0; margin:0 14%;} 
+#cssmenu > ul > li {list-style:inside none; padding:0; margin:0; float:left; display:block; position:relative;} 
+#cssmenu > ul > li > a{ outline:none; display:block; position:relative; padding:6px 10px; font:12px/100% sans-serif; text-align:center; text-decoration:none; text-shadow:1px 1px 0 rgba(0,0,0, 0.4); } 
+/* #cssmenu > ul > li:first-child > a{border-radius:5px 0 0 5px;}  */
+#cssmenu > ul > li > a:after{ content:''; position:absolute; top:-1px; bottom:-1px; right:-2px; z-index:99; } 
+#cssmenu ul li.has-sub:hover > a:after{top:0; bottom:0;background:#3f3f3f} 
+#cssmenu > ul > li.has-sub > a:before{ content:''; position:absolute; top:13px; right:0px; border:5px solid transparent; border-top:5px solid #fff; } 
+#cssmenu > ul > li.has-sub:hover > a:before{top:13px;} 
+#cssmenu ul li.has-sub:hover > a{ background:#3f3f3f; border-color:#3f3f3f; z-index:999; } 
+#cssmenu ul li.has-sub:hover > ul, #cssmenu ul li.has-sub:hover > div{display:block;background:#3f3f3f} 
+#cssmenu ul li.has-sub > a:hover{background:#3f3f3f; border-color:#3f3f3f;} 
+#cssmenu ul li > ul, #cssmenu ul li > div{ display:none; width:auto; position:absolute; top:24px; padding:10px 0; background:#30576E; border-radius:0 0 5px 5px; z-index:999; } 
+#cssmenu ul li > ul{width:200px;} 
+#cssmenu ul li > ul li{display:block; list-style:inside none; padding:0; margin:0; position:relative;} 
+#cssmenu ul li > ul li a{ outline:none; display:block; position:relative; margin:0; padding:6px 10px; font:10pt Arial, Helvetica, sans-serif; color:#fff; text-decoration:none; text-shadow:1px 1px 0 rgba(0,0,0, 0.5); } 
+
+/* #cssmenu, #cssmenu > ul > li > ul > li a:hover{ background: #30576e;background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#3e698c), color-stop(100%,#30576e)); background:-webkit-linear-gradient(top,  #3e698c 0%,#30576e 100%); background:-o-linear-gradient(top, #3e698c 0%,#30576e 100%); background:-ms-linear-gradient(top, #3e698c 0%,#30576e 100%); background:linear-gradient(top,  #3e698c 0%,#30576e 100%); filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e698c', endColorstr='#30576e',GradientType=0 ); }  */
+#cssmenu, #cssmenu > ul > li > ul > li a:hover{ background: #595959;background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#595959), color-stop(100%,#30576e)); background:-webkit-linear-gradient(top,  #595959 0%,#595959 100%); background:-o-linear-gradient(top, #3e698c 0%,#30576e 100%); background:-ms-linear-gradient(top, #3e698c 0%,#30576e 100%); background:linear-gradient(top,  #3e698c 0%,#30576e 100%); filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e698c', endColorstr='#30576e',GradientType=0 ); }  */
+#cssmenu{border-color:#1b313d;} 
+/* #cssmenu > ul > li > a{border-right:1px solid #1b313d; color:#fff;}  */
+#cssmenu > ul > li > a{ color:#fff;}
+#cssmenu > ul > li > a:after{border-color:#6696bd;} 
+/* #cssmenu > ul > li > a:hover{background:#436f93;} */
+#cssmenu > ul > li > a:hover{background:#333333}
+#cssmenu > ul > li > a:active{background:#333333}
+#cssmenu > ul li:hover > ul {
+		display: block;
+	}
+#cssmenu > ul > li > a > span{margin:4px}
+

@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.qaitdevlabs.qualityassessor.model.AssessmentInvitation"
+		table="assessment_invitation">
+		<id name="assessmentInvitationId" type="java.lang.Long">
+			<column name="invitation_id" />
+			<generator class="native" />
+		</id>
+		
+		<property name="invitationDate" type="java.util.Date">
+			<column name="invitation_date" />
+		</property>
+
+		<property name="ignoreInvitation" type="java.lang.Boolean">
+			<column name="ignoreInvitation" />
+		</property>
+		
+		<many-to-one name="productTemplateMap"
+			class="com.qaitdevlabs.qualityassessor.model.ProductTemplateMap" column="product_template_Map"
+			lazy="false"></many-to-one>
+		<many-to-one name="assessor"
+			class="com.qaitdevlabs.qualityassessor.model.User" column="assessor_id"
+			lazy="false" />
+
+	</class>
+</hibernate-mapping>

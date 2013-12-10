@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.qaitdevlabs.qualityassessor.model.UrlRule" table="url_rule">
+		<id name="urlRuleId" type="java.lang.Long">
+			<column name="url_rule_id" />
+			<generator class="native" />
+		</id>
+		<property name="url" type="string">
+			<column name="url" length="40" not-null="true" unique="true" />
+		</property>
+		<property name="method" type="string">
+			<column name="method" length="40" not-null="true" />
+		</property>
+
+		<set name="roles" table="role_url_rule" inverse="false" lazy="true"
+			fetch="select" cascade="all">
+			<key>
+				<column name="url_rule_id" not-null="true" />
+			</key>
+			<many-to-many class="com.qaitdevlabs.qualityassessor.model.Role">
+				<column name="role_id" not-null="true" />
+			</many-to-many>
+		</set>
+	</class>
+</hibernate-mapping>

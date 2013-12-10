@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.qaitdevlabs.qualityassessor.model.ComponentRule" table="component_rule">
+		<id name="componentRuleId" type="java.lang.Long">
+			<column name="component_rule_id" />
+			<generator class="native" />
+		</id>
+		<property name="componentName" type="string">
+			<column name="component_name" length="40" not-null="true"
+				unique="true" />
+		</property>
+		<property name="componentType" type="string">
+			<column name="component_type" length="40" not-null="true" />
+		</property>
+
+		<set name="roles" table="role_component_rule" inverse="false"
+			lazy="true" fetch="select" cascade="all">
+			<key>
+				<column name="component_rule_id" not-null="true" />
+			</key>
+			<many-to-many class="com.qaitdevlabs.qualityassessor.model.Role">
+				<column name="role_id" not-null="true" />
+			</many-to-many>
+		</set>
+
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.qaitdevlabs.qualityassessor.model.SocialNetwork"
+		table="social_network">
+		<id name="socialNetworkId" type="java.lang.Long">
+			<column name="social_network_id" />
+			<generator class="native" />
+		</id>
+		<property name="facebookId" type="string">
+			<column name="facebook_id" length="50" />
+		</property>
+		<property name="twitterId" type="string">
+			<column name="twitter_id" length="50" />
+		</property>
+		<property name="googleplusId" type="string">
+			<column name="googleplus_id" length="50" />
+		</property>
+		<property name="linkedInId" type="string">
+			<column name="linkedIn_id" length="50" />
+		</property>
+		<many-to-one name="user"
+			class="com.qaitdevlabs.qualityassessor.model.User">
+			<column name="user_id" not-null="true" />
+		</many-to-one>
+	</class>
+</hibernate-mapping>

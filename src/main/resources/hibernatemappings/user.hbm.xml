@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.qaitdevlabs.qualityassessor.model.User" table="users">
+		<id name="userId" type="java.lang.Long">
+			<column name="user_id" />
+			<generator class="native" />
+		</id>
+
+		<property name="username" type="string" unique="true">
+			<column name="user_name" length="64" not-null="true" unique="true" />
+		</property>
+
+		<property name="password" type="string" >
+			<column name="password" length="64" not-null="true" />
+		</property>
+
+        <property name="referralName" type="string">
+            <column name="referral_name" length="64"  />
+        </property>
+
+        <property name="firstName" type="string">
+            <column name="first_name" length="40" not-null="true" />
+        </property>
+
+        <property name="middleName" type="string">
+            <column name="middle_name" length="40"  />
+        </property>
+
+		<property name="lastName" type="string">
+			<column name="last_name" length="40" />
+		</property>
+
+        <property name="suffix" type="string">
+            <column name="suffix" length="40"  />
+        </property>
+
+        <property name="addressLine1" type="string">
+            <column name="address_line_1" length="70"  />
+        </property>
+        
+        <property name="addressLine2" type="string">
+            <column name="address_line_2" length="70"  />
+        </property>
+
+        <property name="education" type="string">
+            <column name="education" length="70"  />
+        </property>
+
+        <property name="city" type="string">
+            <column name="city" length="40" />
+        </property>
+
+        <property name="state" type="string">
+            <column name="state" length="40" />
+        </property>
+        
+        <property name="country" type="string">
+            <column name="country" length="40" />
+        </property>
+
+        <property name="zipCode" type="string">
+            <column name="zip_code" length="15" />
+        </property>
+
+        <property name="creationDate" type="java.util.Date" update="false">
+			<column name="creation_date" />
+		</property>
+
+		<property name="enabled" type="boolean">
+			<column name="enabled" />
+		</property>
+
+		<property name="accountNonLocked" type="boolean">
+			<column name="account_non_locked" />
+		</property>
+
+		<property name="accountNonExpired" type="boolean">
+			<column name="account_non_expired" />
+		</property>
+
+		<property name="credentialsNonExpired" type="boolean">
+			<column name="credentials_non_expired" />
+		</property>
+
+		<set name="groups" table="user_group" inverse="false" lazy="false"
+			fetch="select" cascade="all">
+			<key>
+				<column name="user_id" not-null="true" />
+			</key>
+			<many-to-many class="com.qaitdevlabs.qualityassessor.model.Group">
+				<column name="group_id" not-null="true" />
+			</many-to-many>
+		</set>
+        <set name="socialNetworks" table="user_social_network" fetch="select" inverse="true">
+            <key>
+                <column name="user_id" not-null="true" />
+            </key>
+            <one-to-many class="com.qaitdevlabs.qualityassessor.model.SocialNetwork" />
+        </set>
+        <set name="workExperiences" table="user_work_experience" fetch="select" inverse="true">
+            <key>
+                <column name="user_id" not-null="true" />
+            </key>
+            <one-to-many class="com.qaitdevlabs.qualityassessor.model.WorkExperience" />
+        </set>
+	</class>
+</hibernate-mapping>
