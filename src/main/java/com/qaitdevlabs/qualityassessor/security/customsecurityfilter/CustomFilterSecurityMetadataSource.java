@@ -20,7 +20,6 @@ import com.qaitdevlabs.qualityassessor.dao.UrlRuleDao;
  * @author anujchhabra
  * 
  */
-@Component
 public class CustomFilterSecurityMetadataSource extends
 		DefaultFilterInvocationSecurityMetadataSource {
 

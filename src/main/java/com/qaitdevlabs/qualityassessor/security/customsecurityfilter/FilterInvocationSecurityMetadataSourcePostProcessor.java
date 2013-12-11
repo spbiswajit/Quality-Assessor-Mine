@@ -11,11 +11,9 @@ import org.springframework.stereotype.Component;
  * @author anujchhabra
  * 
  */
-@Component
 public class FilterInvocationSecurityMetadataSourcePostProcessor implements
 		BeanPostProcessor {
 	
-	@Autowired
 	private FilterInvocationSecurityMetadataSource securityMetadataSource;
 
 	/**

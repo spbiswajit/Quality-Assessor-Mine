@@ -7,7 +7,7 @@
 
 
 
-<!-- 	<beans:bean
+ 	<beans:bean
 		class="com.qaitdevlabs.qualityassessor.security.customsecurityfilter.FilterInvocationSecurityMetadataSourcePostProcessor">
 		<beans:property name="securityMetadataSource" ref="customFilterSecurity">
 		</beans:property>
@@ -16,7 +16,7 @@
 	<beans:bean id="customFilterSecurity"
 		class="com.qaitdevlabs.qualityassessor.security.customsecurityfilter.CustomFilterSecurityMetadataSource">
 		<beans:property name="urlRuleDao" ref="urlRuleDao"></beans:property>
-	</beans:bean> -->
+	</beans:bean> 
 
 
 
